@@ -1,0 +1,491 @@
+{
+  "schema": 1,
+  "updated": "2026-11-07",
+  "product": "泡泡建造工具",
+  "releases": [
+    {
+      "version": "1.0.0-alpha12",
+      "title": "從森林工坊，到自動小地圖",
+      "summary": "把工具、匯出與實機回饋接成同一條工作流程。",
+      "date": "2026-11-07",
+      "status": "current",
+      "items": [
+        {
+          "kind": "new",
+          "text": "一般工程匯出時自動生成大小地圖：地面、水域、牆與掩體分層，紅藍基地各一個標記。"
+        },
+        {
+          "kind": "new",
+          "text": "新增圖示世界座標校準與空中照片入口；照片可選拍攝焦點，隨工程保存。"
+        },
+        {
+          "kind": "new",
+          "text": "匯出三種遊戲選圖清單圖片；3D入口回到同一份工程的共用圖像頁。"
+        },
+        {
+          "kind": "fix",
+          "text": "修正原生動畫匯出多個根節點造成水站載入退出；保留原生材質與動畫階層。"
+        },
+        {
+          "kind": "fix",
+          "text": "修正水槽部分角度的碰撞卡點；承重面與視覺模型分離，移除多餘側面／底面碰撞。"
+        },
+        {
+          "kind": "fix",
+          "text": "修正大小地圖圖像、定位點與邊界取樣尺寸不一致；修正掩體與地面同色、出生標記重複。"
+        },
+        {
+          "kind": "fix",
+          "text": "補齊道路、草地與路肩光影銜接，調整陰影暗部；保留最亮區域。"
+        },
+        {
+          "kind": "fix",
+          "text": "補修復原後表單顯示、工程保存及重新開啟的同步。"
+        },
+        {
+          "kind": "change",
+          "text": "森林工坊歸入森林系列；重生牆與隊伍標記歸入基本物件。"
+        },
+        {
+          "kind": "change",
+          "text": "水站清單照片改為單座維修站近距離空拍，不再用整張地圖的遠景。"
+        }
+      ],
+      "limit": "201水站已由使用者完整實機驗收。自動小地圖另以兩張通用工程、431件物件的新工程及正式封裝匯出驗證；不代表所有任意模型或多層地圖皆無需人工檢查。"
+    },
+    {
+      "version": "1.0.0-alpha11",
+      "title": "森林工坊 52",
+      "summary": "用可組裝物件，銜接地形、建築與道路。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "提供52件森林工坊物件與圖鑑。"
+        },
+        {
+          "kind": "new",
+          "text": "沿用原生模型、材質與可編輯工程，保留來源追溯。"
+        },
+        {
+          "kind": "change",
+          "text": "把森林地圖製作經驗整理成組裝工具與範例。"
+        }
+      ],
+      "limit": "本條為保留基線的功能回溯，不把物件數量當作品質或玩法驗收。"
+    },
+    {
+      "version": "1.0.0-alpha10",
+      "title": "安裝只鎖定目標遊戲",
+      "summary": "避免其他客戶端程序誤擋單機地圖安裝。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "fix",
+          "text": "安裝／還原的程序檢查改以實際目標路徑識別，不僅依程序名稱。"
+        },
+        {
+          "kind": "change",
+          "text": "保留版本檢查、備份、雜湊核對及可回滾流程。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "1.0.0-alpha9",
+      "title": "屬性修改，真的回到模型",
+      "summary": "修正表單改了、3D顯示卻沒更新的斷點。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "fix",
+          "text": "修正套用座標後模型位置未同步的問題。"
+        },
+        {
+          "kind": "change",
+          "text": "沿用原本俯視編輯與3D返回的單次復原交易。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "1.0.0-alpha8",
+      "title": "開戰前後，可以先預演",
+      "summary": "在編輯器中檢查重生牆的兩個階段。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "八個原生重生牆組件的等待／開戰預演與重設。"
+        },
+        {
+          "kind": "change",
+          "text": "等待時可見且阻擋，開戰後隱藏並解除預演碰撞。"
+        }
+      ],
+      "limit": "這版的證據是編輯器預演，不能代替原生遊戲開戰驗收。"
+    },
+    {
+      "version": "1.0.0-alpha7",
+      "title": "碰撞語義與即時預覽",
+      "summary": "裝飾不擋人，真正的地面才形成走路碰撞。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "Tab物件庫即時模型預覽；完整材質背景載入與重複選取快取。"
+        },
+        {
+          "kind": "fix",
+          "text": "依ground與ignoreCollision區分可碰撞面；不把ignoreBullet／ignoreCamera誤當不擋人。"
+        },
+        {
+          "kind": "fix",
+          "text": "隱藏裝飾時同步取消拾取，顯示後可恢復。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "1.0.0-alpha6",
+      "title": "本機線上資源，唯讀匯入",
+      "summary": "把來源客戶端與可安裝目標清楚分開。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "讀取本機線上客戶端的地圖與圖層，建立獨立可編輯工程。"
+        },
+        {
+          "kind": "fix",
+          "text": "不再把唯讀來源誤當成必須符合單機版雜湊的安裝目標。"
+        }
+      ],
+      "limit": "不登入、不連線、不改線上客戶端；靜態匯入不會自動還原模式腳本、特效與遊戲規則。"
+    },
+    {
+      "version": "1.0.0-alpha5",
+      "title": "自由建造與自訂快捷列",
+      "summary": "允許作者先搭結構，再決定合理的落點。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "自由放置重疊、懸空與地板範圍外的物件。"
+        },
+        {
+          "kind": "new",
+          "text": "數字1–0自訂積木、原生物件快捷列，並隨工程保存。"
+        },
+        {
+          "kind": "change",
+          "text": "仍拒絕非有限座標與負尺寸，保留復原／重做。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "1.0.0-alpha4",
+      "title": "匯出材質欄位一致性",
+      "summary": "補上模型與WB材質索引的對應檢查。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "fix",
+          "text": "修正匯出材質欄位對應錯誤並新增結構檢查。"
+        }
+      ],
+      "limit": "檔案格式檢查與遊戲載入是否成功，分開記錄。"
+    },
+    {
+      "version": "1.0.0-alpha3",
+      "title": "俯視編輯 × 3D走圖",
+      "summary": "主介面維持原本工作流，需要時才進入3D。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "3D選取、刪除、復原／重做與Shift快速穿越預覽。"
+        },
+        {
+          "kind": "fix",
+          "text": "3D修改返回俯視工程時以一筆復原記錄同步；純走圖不新增修改。"
+        },
+        {
+          "kind": "change",
+          "text": "角色與相機操作不混入遊戲匯出資料。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "1.0.0-alpha2",
+      "title": "舊功能搬進3D介面",
+      "summary": "物件庫、材質與精確屬性不再分離。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "Tab物件面板，接入積木、原生模型、貼圖及屬性編輯。"
+        },
+        {
+          "kind": "new",
+          "text": "讀取既有工程、原生幾何與材質，保留原安裝工具相容路徑。"
+        },
+        {
+          "kind": "change",
+          "text": "預覽隱藏只影響編輯顯示，不刪除模型或改動匯出碰撞。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "1.0.0-alpha1",
+      "title": "3D沙盒起點",
+      "summary": "先把走路、飛行與基本建造跑起來。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "第一／第三人稱、走路與飛行、積木放置、旋轉、縮放及網格吸附。"
+        },
+        {
+          "kind": "new",
+          "text": "角色參考、碰撞、建造預覽與工程保存／恢復。"
+        }
+      ],
+      "limit": "沙盒物理不是原遊戲移動、斜坡跳或翻牆規則的完整還原。"
+    },
+    {
+      "version": "0.1.5.5",
+      "title": "透視相機",
+      "summary": "靠近物件時，物件真的變大。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "透視預覽、WASD前後移動與焦點框選。"
+        },
+        {
+          "kind": "change",
+          "text": "保留正交模式；相機只用於編輯，不寫入地圖座標。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "0.1.5.4",
+      "title": "WASD輸入修正",
+      "summary": "讓短按、長按與視窗焦點各就各位。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "fix",
+          "text": "修正快速按下／放開跨計時器間隔時可能漏掉輸入。"
+        },
+        {
+          "kind": "fix",
+          "text": "只在3D預覽取得焦點時處理移動，避免尺寸與文字輸入受影響。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "0.1.5.3",
+      "title": "隱藏、移動與相容性候選",
+      "summary": "大圖編輯多一點控制，也把未確認的問題說清楚。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "暫時隱藏／恢復、只看選取與WASD相機平移。"
+        },
+        {
+          "kind": "change",
+          "text": "提供靜態相容性匯出候選，清理不匹配的動態標記。"
+        }
+      ],
+      "limit": "當時的小溪載入閃退尚未完成實機根因驗收，不列為已修復。"
+    },
+    {
+      "version": "0.1.5.2",
+      "title": "大圖預覽加速",
+      "summary": "減少重複準備，保留完整畫面。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "fix",
+          "text": "批次提交模型到原生CPU繪製核心，快取物件包圍盒。"
+        },
+        {
+          "kind": "change",
+          "text": "保留材質、Alpha裁切、深度與點選；無原生核心時仍有Python備援。"
+        }
+      ],
+      "limit": "測得的單次繪圖耗時不是所有電腦的FPS保證。"
+    },
+    {
+      "version": "0.1.5.1",
+      "title": "可編輯的原生起始工程",
+      "summary": "新工程不只是一個放在中央的模型。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "以原生小溪靜態場景建立可逐件編輯的起始工程，保留出生點與原始比例。"
+        },
+        {
+          "kind": "fix",
+          "text": "處理預覽天空外殼遮擋場景的問題。"
+        }
+      ],
+      "limit": "起始工程不是完整的模式、AI、動畫與特效還原。"
+    },
+    {
+      "version": "0.1.5",
+      "title": "地圖物件與特殊積木",
+      "summary": "從單件素材，往可重用的結構前進。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "地圖圖層物件庫與額外參數化積木、特殊結構範例。"
+        },
+        {
+          "kind": "fix",
+          "text": "補強匯出物件命名與DDS貼圖資源處理。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "0.1.4.2",
+      "title": "材質與碰撞修正",
+      "summary": "修正模型材質索引和WB不一致。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "fix",
+          "text": "單材質網格統一使用合法材質索引，匯出時檢查模型與WB一致性。"
+        },
+        {
+          "kind": "change",
+          "text": "保留UV、面向與ground／cover等原生屬性；不強制把裝飾變實心。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "0.1.4.1",
+      "title": "原生CPU預覽核心",
+      "summary": "把預覽繪製從逐點處理改成更有效率的路徑。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "加入CPU光柵化核心、幾何快取與互動時較低解析度繪製。"
+        },
+        {
+          "kind": "change",
+          "text": "保留深度、Alpha、貼圖、選取與Python備援；不是遊戲注入或GPU遊戲渲染器。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "0.1.4",
+      "title": "原生物件庫",
+      "summary": "模型、尺寸、材質和來源一起選。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "十個系列的80件原生物件與176張貼圖，提供搜尋、系列與類別篩選。"
+        },
+        {
+          "kind": "new",
+          "text": "基本積木可套用貼圖；原生物件保留自身UV與多材質。"
+        }
+      ],
+      "limit": "這是當時的工具素材快照，不代表遊戲全素材已收錄。"
+    },
+    {
+      "version": "0.1.3",
+      "title": "角色比例參考",
+      "summary": "搭建時能看比例，匯出時不混進角色。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "靜態角色參考與常用積木比例、舊積木尺寸整理。"
+        },
+        {
+          "kind": "fix",
+          "text": "參考物件保留在工程，但排除模型、WB與遊戲包輸出。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "0.1.2",
+      "title": "更清楚的3D預覽",
+      "summary": "別讓大地板把相機焦點拉得太遠。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "內容／全圖／選取焦點、標準視角、預覽點選與深度遮擋。"
+        },
+        {
+          "kind": "change",
+          "text": "相機與預覽調整不改匯出、碰撞或安裝資料。"
+        }
+      ],
+      "limit": ""
+    },
+    {
+      "version": "0.1.1",
+      "title": "基本編輯與安全安裝",
+      "summary": "從積木、工程，到可回滾的地圖資源。",
+      "date": null,
+      "status": "historical",
+      "items": [
+        {
+          "kind": "new",
+          "text": "新增平台、箱子、矮牆、斜坡、階梯與出生點，保存bfmap工程及復原／重做。"
+        },
+        {
+          "kind": "new",
+          "text": "支援已核對的單機710目標，獨立地圖ID、安裝備份、雜湊檢查與回滾。"
+        },
+        {
+          "kind": "change",
+          "text": "遊戲執行時拒絕安裝／還原，不強制關閉程序。"
+        }
+      ],
+      "limit": ""
+    }
+  ]
+}
