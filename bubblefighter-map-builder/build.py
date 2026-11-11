@@ -13,10 +13,15 @@ html='''<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta na
 community=data.get('community')
 if community:
  repo=h(community['repository'],quote=True);tag=h(community['tag'],quote=True)
+ gallery_tag=h(community.get("gallery_tag",community["tag"]))
  gallery=[]
  for shot in community['snapshots']:
   src=h(shot['src'],quote=True)
   gallery.append(f'<figure><a href="{src}" aria-label="查看原尺寸：{h(shot["alt"],quote=True)}"><img src="{src}" width="{int(shot["width"])}" height="{int(shot["height"])}" alt="{h(shot["alt"],quote=True)}" loading="lazy" decoding="async"></a><figcaption><strong>{h(shot["title"])}</strong><p>{h(shot["caption"])}</p></figcaption></figure>')
- section=f'''<section id="snapshots" class="snapshots" aria-labelledby="snapshot-title"><div class="section-heading"><div><p class="eyebrow">INSIDE THE EDITOR</p><h2 id="snapshot-title">編輯器實際畫面</h2></div><p>{tag}<br>點選圖片查看原尺寸</p></div><div class="snap-grid">{''.join(gallery)}</div><div class="snap-links"><a class="button" href="{repo}">公開原始碼 ↗</a><a href="{repo}/archive/refs/tags/{tag}.zip">下載此版原始碼 ZIP ↓</a></div><p class="snap-note">需要 Godot 4.5.1 和 Python 3.12；啟動步驟見公開庫 README。快照只用社群版基本積木，非遊戲內畫面。</p></section>'''
+ section=f'''<section id="snapshots" class="snapshots" aria-labelledby="snapshot-title"><div class="section-heading"><div><p class="eyebrow">INSIDE THE EDITOR</p><h2 id="snapshot-title">編輯器實際畫面</h2></div><p>{gallery_tag}<br>點選圖片查看原尺寸</p></div><div class="snap-grid">{''.join(gallery)}</div><div class="snap-links"><a class="button" href="{repo}">公開原始碼 ↗</a><a href="{repo}/archive/refs/tags/{tag}.zip">下載此版原始碼 ZIP ↓</a></div><p class="snap-note">需要 Godot 4.5.1 和 Python 3.12；啟動步驟見公開庫 README。快照只用社群版基本積木，非遊戲內畫面。</p></section>'''
  html=html.replace('<section id="releases"',section+'<section id="releases"',1).replace('<a href="#verification">驗證說明</a>','<a href="#snapshots">編輯器快照</a><a href="#verification">驗證說明</a>',1)
+if community and community.get('lesson'):
+ l=community['lesson'];img=h(l['src'],quote=True);doc=h(l['docs'],quote=True)
+ guide=f'''<section id="native-library" class="snapshots" aria-labelledby="library-title"><p class="eyebrow">GET STARTED · BETA 1 RC2</p><h2 id="library-title">第一次導入原生地圖庫？</h2><div class="lesson-layout"><div><p>開編輯器，按 <strong>建圖教學 → 課前｜導入原生地圖庫</strong>。前兩關的提示卡也能回到這裡。</p><p><strong>已有離線物件庫：</strong>選擇含 <code>catalogue.sqlite</code>、<code>models/</code>、<code>textures/</code> 的那一層。儲存工程並重開，用教學給的範例 ID 搜尋，確認右欄出現模型。</p><p><strong>只有遊戲客戶端：</strong>若另有可信的相容讀包工具，使用「從線上 / 單機地圖擷取」選來源與圖層。讀進一張圖不等於建立全庫。</p><a class="button" href="{doc}">圖文步驟與疑難排解 ↗</a></div><a href="{img}" aria-label="放大課前教學截圖"><img src="{img}" alt="RC2 的課前教學，分為選擇離線物件庫與唯讀地圖擷取兩條路徑" width="{int(l['width'])}" height="{int(l['height'])}" loading="lazy"></a></div></section>'''
+ html=html.replace('<section id="snapshots"',guide+'<section id="snapshots"',1).replace('<a href="#verification">驗證說明</a>','<a href="#native-library">導入教學</a>',1)
 (S/'index.html').write_text(html,'utf-8',newline='\n');print(f'Built {len(rows)} release entries')

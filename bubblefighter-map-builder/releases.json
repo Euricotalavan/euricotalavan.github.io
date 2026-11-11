@@ -4,11 +4,33 @@
   "product": "泡泡建造工具",
   "releases": [
     {
+      "version": "1.1.0-beta1-rc.2",
+      "title": "Beta 1 RC2｜教你導入原生地圖庫",
+      "summary": "「建圖教學」新增課前入口。分開說明如何連接離線全庫與如何讀取單張原生地圖；兩者都不會把官方素材加入公開包。",
+      "date": "2026-11-11",
+      "status": "current",
+      "items": [
+        {
+          "kind": "new",
+          "text": "可直接選擇含 catalogue.sqlite、models、textures 的資料夾，檢查後記住位置。重開後使用範例 ID 查到並確認模型。"
+        },
+        {
+          "kind": "new",
+          "text": "在教學前兩關可隨時重開操作說明，沒有素材也可繼續使用 13 種基礎積木。"
+        },
+        {
+          "kind": "fix",
+          "text": "從自備遊戲來源讀圖不再要求公開包內有預先整理的地圖名單；可明確指定可信且相容的本機讀包工具。"
+        }
+      ],
+      "limit": "實際重開社群版後可從自備索引載入範例模型；另對自備 1304 客戶端列出 157 張圖，並讀取小河 track 的 413 筆項目。不是涵蓋所有地圖的逐件驗證，也不是遊戲內測試。"
+    },
+    {
       "version": "1.1.0-beta1-rc.1",
       "title": "Beta 1 RC1｜社群版原始碼公開",
       "summary": "乾淨環境也能開圖、編輯、保存與重開。這一版修了教學卡住群組拖曳的問題，並把遊戲素材留在使用者本機。",
       "date": "2026-11-11",
-      "status": "current",
+      "status": "historical",
       "items": [
         {
           "kind": "new",
@@ -689,11 +711,11 @@
     }
   ],
   "current_summary": {
-    "title": "Beta 1 RC1 · 社群原始碼首次公開",
-    "description": "可從空白工程開始建圖，不必安裝遊戲。這是預發行版，不取代 Alpha16。"
+    "title": "Beta 1 RC2 · 原生地圖庫課前教學",
+    "description": "已有離線庫？在編輯器選資料夾。只有遊戲來源？用自備工具走唯讀讀圖流程。"
   },
   "community": {
-    "tag": "v1.1.0-beta1-rc.1",
+    "tag": "v1.1.0-beta1-rc.2",
     "repository": "https://github.com/Euricotalavan/bubblefighter-map-builder-community",
     "snapshots": [
       {
@@ -720,6 +742,13 @@
         "width": 1331,
         "height": 749
       }
-    ]
+    ],
+    "gallery_tag": "v1.1.0-beta1-rc.1",
+    "lesson": {
+      "docs": "https://github.com/Euricotalavan/bubblefighter-map-builder-community/blob/v1.1.0-beta1-rc.2/docs/native-library.md",
+      "src": "snapshots/rc2/native-library.webp",
+      "width": 620,
+      "height": 619
+    }
   }
 }
