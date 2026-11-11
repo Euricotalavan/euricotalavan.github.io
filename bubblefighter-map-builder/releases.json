@@ -1,14 +1,40 @@
 {
   "schema": 1,
-  "updated": "2026-11-08",
+  "updated": "2026-11-11",
   "product": "泡泡建造工具",
   "releases": [
+    {
+      "version": "1.1.0-beta1-rc.1",
+      "title": "Beta 1 RC1｜社群版原始碼公開",
+      "summary": "乾淨環境也能開圖、編輯、保存與重開。這一版修了教學卡住群組拖曳的問題，並把遊戲素材留在使用者本機。",
+      "date": "2026-11-11",
+      "status": "current",
+      "items": [
+        {
+          "kind": "new",
+          "text": "內建 13 種由程式生成的基本積木；不需要遊戲資源就能開始。若已有相容離線物件庫，可選擇唯讀接入。"
+        },
+        {
+          "kind": "fix",
+          "text": "「一起移動」會提示如何加選第二件，並讓提示卡避開拖曳起點。只動一件再補選，不會被判成整組完成。"
+        },
+        {
+          "kind": "fix",
+          "text": "修正關閉編輯器後量測工具未釋放的問題，並限制內嵌貼圖的讀取範圍。"
+        },
+        {
+          "kind": "change",
+          "text": "以全新公開庫發行社群原始碼；不包含舊私人 Git 歷史、遊戲安裝包或官方素材。"
+        }
+      ],
+      "limit": "社群版的保存重開與群組拖曳等 6 項自動回歸通過；9 關教學的完整自動走查另有自備相容物件庫及來源素材，不是裸包就有原生重生牆，也不是 710 實機驗收。"
+    },
     {
       "version": "1.0.0-alpha16",
       "title": "Alpha16 分類體積排序＋地面/牆面貼片分流",
       "summary": "完整篩選結果先排序再翻頁；新增貼片分類，修正原生微小厚度漏分。物件庫與讀取器共用規則，使用者已確認分類可用。",
       "date": "2026-11-08",
-      "status": "current",
+      "status": "historical",
       "items": [
         {
           "kind": "new",
@@ -663,8 +689,37 @@
     }
   ],
   "current_summary": {
-    "title": "Alpha16・體積排序與貼片分類已確認",
-    "description": "10,336筆貼片獨立分流；修正微小厚度漏分，並納入包圍盒體積 < 15。使用者已確認分類、排序與翻頁。",
-    "source_entries": 85184
+    "title": "Beta 1 RC1 · 社群原始碼首次公開",
+    "description": "可從空白工程開始建圖，不必安裝遊戲。這是預發行版，不取代 Alpha16。"
+  },
+  "community": {
+    "tag": "v1.1.0-beta1-rc.1",
+    "repository": "https://github.com/Euricotalavan/bubblefighter-map-builder-community",
+    "snapshots": [
+      {
+        "src": "snapshots/rc1/workbench.webp",
+        "title": "01 / 3D 工作區",
+        "caption": "從等角視圖看兩側階梯與中央橋面。這張練習圖只用社群版內建積木搭建。",
+        "alt": "等角視圖：中央橋面、雙側坡道與拱門",
+        "width": 1331,
+        "height": 749
+      },
+      {
+        "src": "snapshots/rc1/plan.webp",
+        "title": "02 / 俯視配置",
+        "caption": "切到 2D 看同一張圖：對照中央橋面、兩側入口與掩體的間距。",
+        "alt": "同一座雙橋練習場的俯視配置",
+        "width": 1331,
+        "height": 749
+      },
+      {
+        "src": "snapshots/rc1/tutorial.webp",
+        "title": "03 / 群組拖曳教學",
+        "caption": "選好兩件積木後，第四關會指出要勾哪個控制項，再引導整組移動。",
+        "alt": "建圖練習第四關以黃色框線指向右欄群組拖曳",
+        "width": 1331,
+        "height": 749
+      }
+    ]
   }
 }
